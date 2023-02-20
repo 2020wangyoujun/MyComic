@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.example.mycomic"
+        minSdk 25
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+//    RxAppCompatActivity，RxFragment
+    implementation 'com.trello.rxlifecycle4:rxlifecycle-components:4.0.2'
+
+//    RX系列
+
+    //    引入rxjava
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
+    //    引入retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    //    引入转换器
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+//引入jsoup解析html
+    implementation 'org.jsoup:jsoup:1.15.3'
+
+//引入numberprogressbar
+    implementation 'com.daimajia.numberprogressbar:library:1.4@aar'
+
+    //    引入glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+
+    //    引入banner
+    implementation 'io.github.youth5201314:banner:2.2.2'
+
+   //  引入room
+    def room_version = "2.4.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    //photoview
+    implementation 'com.github.chrisbanes.photoview:library:1.2.4'
+    //引入gosn
+    implementation 'com.google.code.gson:gson:2.10.1'
+}
